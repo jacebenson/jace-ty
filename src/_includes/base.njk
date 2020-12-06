@@ -70,9 +70,9 @@
   {%- endfor %}
 ];
 function searchPosts(){
-    console.log('arguments', arguments)
-    console.log('arguments[0]',arguments[0]);
-    console.log("document.getElementById('searchText').value;", document.getElementById('searchText').value);
+    //console.log('arguments', arguments)
+    //console.log('arguments[0]',arguments[0]);
+    //console.log("document.getElementById('searchText').value;", document.getElementById('searchText').value);
     var text = arguments[0] || document.getElementById('searchText').value;
     text = text.toLowerCase();
     var returnArr = posts.filter(function(post){
