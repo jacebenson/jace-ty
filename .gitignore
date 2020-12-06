@@ -1,6 +1,9 @@
 # Site
 _site
 
+# Random windows thing
+.DS_Store
+
 ### Node ###
 # Logs
 logs
