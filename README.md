@@ -13,7 +13,7 @@ This project scaffold includes:
 - A folder structure for each post with proper passthrough for files
 - [Comments](https://github.com/jacebenson/jace-ty/blob/main/src/_includes/layouts/post-single.njk#L56) powered by [https://utteranc.es/](https://utteranc.es/)
 
-![Eleventy screenshot](./jacety-template.jpg)
+![Eleventy screenshot](./jacety-screenshot.jpg)
 
 
 ## Instructions
