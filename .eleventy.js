@@ -15,6 +15,16 @@ module.exports = function (eleventyConfig) {
     // add support for syntax highlighting
     eleventyConfig.addPlugin(syntaxHighlight);
 
+    eleventyConfig.addPairedShortcode('details', function (content, title) {
+        let detailstag = 'details';
+        let summarystyle = arguments['2'];
+        let attributes = arguments['3'];
+        if(attributes){
+           detailstag += ' ' + attributes;
+        }
+        return `<${detailstag}><summary style="${summarystyle}"><span>${title}</span></summary>${content}</details>`;
+     });
+
 
     return {
         addPassthroughCopy: true,

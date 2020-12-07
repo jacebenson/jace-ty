@@ -4,75 +4,198 @@ subtitle: "It's after the second"
 summary: "Soo many posts! again!"
 date: 2020-12-08T22:00:00-05:00
 ---
-The first post is a "draft"
-# This is a Heading h1
 
-## This is a Heading h2
+# Text
+```markdown
+It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link to Google!](http://google.com)
+```
 
-###### This is a Heading h6
+It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link to Google!](http://google.com)
 
-## Emphasis
 
-*This text will be italic*\
-*This will also be italic*
+# Headings
+```markdown
+# This is an <h1> tag
+## This is an <h2> tag
+###### This is an <h6> tag
+```
 
-**This text will be bold**\
-**This will also be bold**
+# This is an <h1> tag
+## This is an <h2> tag
+###### This is an <h6> tag
 
-*You **can** combine them*
+# Emphasis
 
-## Lists
+```markdown
+*This text will be italic*
+_This will also be italic_
 
-### Unordered
+**This text will be bold**
+__This will also be bold__
+
+_You **can** combine them_
+```
+
+*This text will be italic*
+_This will also be italic_
+
+**This text will be bold**
+__This will also be bold__
+
+_You **can** combine them_
+
+# Lists
+
+## Unordered
+
+```markdown
+* Item 1
+* Item 2
+  * Item 2a
+  * Item 2b
+```
 
 * Item 1
 * Item 2
-
   * Item 2a
   * Item 2b
 
-### Ordered
+## Ordered
 
+```markdown
 1. Item 1
-2. Item 2
-3. Item 3
-
+1. Item 2
+1. Item 3
    1. Item 3a
-   2. Item 3b
-
-## Links
-
-You may be using [Markdown Live Preview](https://markdownlivepreview.com/).
-
-## Blockquotes
-
-> Markdown is a lightweight markup language with plain-text-formatting syntax, created in 2004 by John Gruber with Aaron Swartz.
-  <cite>Someone important</cite>
-
-> Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
-<cite>Someone else important</cite>
-
-## Inline code
-
-This web site is using `markedjs/marked`.
-
-## Block code
-
-```js
-//javascript
-console.log('Hello from jace-ty');
+   1. Item 3b
 ```
+
+# Images 
+
+```markdown
+![Thumbnail](./featured-thumbnail.jpg)
+Format: ![Alt Text](url)
+
+```
+
+![GitHub Logo](./featured-thumbnail.jpg)
+Format: ![Alt Text](url)
+
+# Links
+
+```markdown
+http://github.com - automatic!
+[GitHub](http://github.com)
+```
+
+http://github.com - automatic!
+[GitHub](http://github.com)
+
+# Blogquotes
+
+```markdown
+As Kanye West said:
+
+> We're living the future so
+> the present is our past.
+
+Or with the Cite Tag
+
+> Hello
+<cite>Thing 1</cite>
+```
+
+As Kanye West said:
+
+> We're living the future so
+> the present is our past.
+
+Or with the Cite Tag
+
+> Hello
+<cite>Thing 1</cite>
+
+# Inline Code
+
+```markdown
+I think you should use an
+`<addr>` element here instead.
+```
+
+I think you should use an
+`<addr>` element here instead.
+
+# Block Code
+
+````markdown
+```shell
+npm run start #comments
+```
+````
+
 
 ```bash
-#bash
-console.log('test')
+npm run start #comments
 ```
 
-## Tables
+# Tables 
 
-| This | Is | A | Table |
-| --- | --- | --- | --- |
-| V1 | V2|v3|v4|
-| V1 | V2|v3|v4|
-| V1 | V2|v3|v4|
-| V1 | V2|v3|v4|
+````
+{{ "| First Header | Second Header |" | escape }}
+| ------------ | ------------- |
+| Content from cell 1 | Content from cell 2 |
+| Content in the first column | Content in the second column |
+| Content in the first column | Content in the second column |
+| Content in the first column | Content in the second column |
+````
+
+| First Header | Second Header |
+| ------------ | ------------- |
+| Content from cell 1 | Content from cell 2 |
+| Content in the first column | Content in the second column |
+| Content in the first column | Content in the second column |
+| Content in the first column | Content in the second column |
+
+# Custom Tags
+
+## Details / Summary Tags
+
+```js
+{{ "{%" | escape }} details 'Reasons to create content', 'font-size:2em;', 'open' {{ "%}" | escape }}
+
+- This
+- Is
+- A
+- Open
+- List
+
+{{ "{%" | escape }} details 'Nested Reason' {{ "%}" | escape }}
+
+- This
+- Is
+- A
+- Closed
+- List
+{{ "{%" | escape }} enddetails {{ "%}" | escape }}
+
+{{ "{%" | escape }} enddetails {{ "%}" | escape }}
+```
+
+{% details 'Reasons to create content', 'font-size:2em;', 'open' %}
+
+- This
+- Is
+- A
+- Open
+- List
+
+{% details 'Nested Reason' %}
+
+- This
+- Is
+- A
+- Closed
+- List
+{% enddetails %}
+
+{% enddetails %}

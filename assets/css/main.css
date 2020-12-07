@@ -1300,12 +1300,36 @@ blockquote::after {
   display: block;
   font-size: 80px;
   float:right;
-    position: relative;
+  position: relative;
   height: 0;
-  }
+}
 
-  cite {
-    float: right;
-    padding-top:1em;
-    color: #000;
-  }
+cite {
+  float: right;
+  padding-top:1em;
+  color: #000;
+}
+
+table > * {
+  padding: 10px;
+}
+table > thead {
+  border-bottom: 1px solid black;
+}
+table > thead > tr > th{
+  text-align: center;
+  padding: 1rem;
+  font-style: italic;
+  font-size: large;
+}
+table > tbody > tr {
+  border-bottom: 1px dotted grey;
+}
+table > tbody > tr > td {
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #ddd;}

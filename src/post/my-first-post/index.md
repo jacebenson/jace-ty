@@ -5,51 +5,204 @@ summary: "A summary of the post before the second"
 date: 2020-11-28T22:00:00-05:00
 tags: "draft"
 ---
-# This is a Heading h1
+---
+title: "This is the third post"
+subtitle: "It's after the second"
+summary: "Soo many posts! again!"
+date: 2020-12-08T22:00:00-05:00
+---
 
-## This is a Heading h2
+# Text
+```markdown
+It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link to Google!](http://google.com)
+```
 
-###### This is a Heading h6
+It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link to Google!](http://google.com)
 
-## Emphasis
 
-*This text will be italic*\
-*This will also be italic*
+# Headings
+```markdown
+# This is an <h1> tag
+## This is an <h2> tag
+###### This is an <h6> tag
+```
 
-**This text will be bold**\
-**This will also be bold**
+# This is an <h1> tag
+## This is an <h2> tag
+###### This is an <h6> tag
 
-*You **can** combine them*
+# Emphasis
 
-## Lists
+```markdown
+*This text will be italic*
+_This will also be italic_
 
-### Unordered
+**This text will be bold**
+__This will also be bold__
+
+_You **can** combine them_
+```
+
+*This text will be italic*
+_This will also be italic_
+
+**This text will be bold**
+__This will also be bold__
+
+_You **can** combine them_
+
+# Lists
+
+## Unordered
+
+```markdown
+* Item 1
+* Item 2
+  * Item 2a
+  * Item 2b
+```
 
 * Item 1
 * Item 2
-
   * Item 2a
   * Item 2b
 
-### Ordered
+## Ordered
 
+```markdown
 1. Item 1
-2. Item 2
-3. Item 3
-
+1. Item 2
+1. Item 3
    1. Item 3a
-   2. Item 3b
+   1. Item 3b
+```
 
-## Links
+# Images 
 
-You may be using [Markdown Live Preview](https://markdownlivepreview.com/).
+```markdown
+![Thumbnail](./featured-thumbnail.jpg)
+Format: ![Alt Text](url)
 
-## Blockquotes
+```
 
-> Markdown is a lightweight markup language with plain-text-formatting syntax, created in 2004 by John Gruber with Aaron Swartz.
->
-> > Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
+![GitHub Logo](./featured-thumbnail.jpg)
+Format: ![Alt Text](url)
 
-## Inline code
+# Links
 
-This web site is using `markedjs/marked`.
+```markdown
+http://github.com - automatic!
+[GitHub](http://github.com)
+```
+
+http://github.com - automatic!
+[GitHub](http://github.com)
+
+# Blogquotes
+
+```markdown
+As Kanye West said:
+
+> We're living the future so
+> the present is our past.
+
+Or with the Cite Tag
+
+> Hello
+<cite>Thing 1</cite>
+```
+
+As Kanye West said:
+
+> We're living the future so
+> the present is our past.
+
+Or with the Cite Tag
+
+> Hello
+<cite>Thing 1</cite>
+
+# Inline Code
+
+```markdown
+I think you should use an
+`<addr>` element here instead.
+```
+
+I think you should use an
+`<addr>` element here instead.
+
+# Block Code
+
+````markdown
+```shell
+npm run start #comments
+```
+````
+
+
+```bash
+npm run start #comments
+```
+
+# Tables 
+
+````
+{{ "| First Header | Second Header |" | escape }}
+| ------------ | ------------- |
+| Content from cell 1 | Content from cell 2 |
+| Content in the first column | Content in the second column |
+| Content in the first column | Content in the second column |
+| Content in the first column | Content in the second column |
+````
+
+| First Header | Second Header |
+| ------------ | ------------- |
+| Content from cell 1 | Content from cell 2 |
+| Content in the first column | Content in the second column |
+| Content in the first column | Content in the second column |
+| Content in the first column | Content in the second column |
+
+# Custom Tags
+
+## Details / Summary Tags
+
+```js
+{{ "{%" | escape }} details 'Reasons to create content', 'font-size:2em;', 'open' {{ "%}" | escape }}
+
+- This
+- Is
+- A
+- Open
+- List
+
+{{ "{%" | escape }} details 'Nested Reason' {{ "%}" | escape }}
+
+- This
+- Is
+- A
+- Closed
+- List
+{{ "{%" | escape }} enddetails {{ "%}" | escape }}
+
+{{ "{%" | escape }} enddetails {{ "%}" | escape }}
+```
+
+{% details 'Reasons to create content', 'font-size:2em;', 'open' %}
+
+- This
+- Is
+- A
+- Open
+- List
+
+{% details 'Nested Reason' %}
+
+- This
+- Is
+- A
+- Closed
+- List
+{% enddetails %}
+
+{% enddetails %}
