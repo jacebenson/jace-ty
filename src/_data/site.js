@@ -7,8 +7,16 @@ module.exports =
     title: "Jace-ty",
     
     patreon: "https://www.patreon.com/bePatron?u=23597006",//if uncommented adds a link to header and footer
-    subtitle: "I am writing about my experiences as a ServiceNow Developer.",
+    subtitle: "This is a subtitle about your amazing 11ty site.",
     author: "Your Name",//used all over
     email: "youremailforrss@example.com",//used specificly for rss feed
-    utterancesRepo: "jacebenson/jace.pro"//used for comments//if commented, doesnt load
+    utterancesRepo: "jacebenson/jace-ty",//used for comments//if commented, doesnt load
+    lastBuildDate: (()=>{
+        var now = new Date();
+        return now.toISOString().split('T')[0]
+    })(),
+    lastBuildYear: (()=>{
+        var now = new Date();
+        return now.getFullYear();
+    })(),
 }
