@@ -230,7 +230,14 @@ span {
     color: #333; }
   .page-title p:last-child {
     margin-bottom: 0; }
-
+    
+body, wrapper {
+      min-height:100vh;
+   }
+   
+   .flex-fill {
+      flex:1 1 auto;
+   }
 body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -256,7 +263,7 @@ iframe {
  ***************************** */
 header {
   background-color: #222538;
-  padding: 18px 0; }
+   }
 
 .logo-column a.logo {
   height: 60px;
@@ -1333,3 +1340,13 @@ table > tbody > tr > td {
 table tr:nth-child(even){background-color: #f2f2f2;}
 
 table tr:hover {background-color: #ddd;}
+
+summary:hover {
+  cursor: pointer;
+}
+
+#searchResults {
+  text-align: left;
+  padding-left: 10px;
+  width: 50%;
+}
