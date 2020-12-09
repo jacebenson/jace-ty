@@ -1,6 +1,7 @@
-module.exports = 
-{
-    twitter: "https://twitter.com/jacebenson",
+let now = new Date();
+
+module.exports = {
+    twitter: "jace-ty",
     github: "https://github.com/jace-ty",
     linkedin: "https://linkedin.com/in/jace-ty",
     baseURL: "https://jace-ty.netlify.app",
@@ -11,12 +12,6 @@ module.exports =
     author: "Your Name",//used all over
     email: "youremailforrss@example.com",//used specificly for rss feed
     utterancesRepo: "jacebenson/jace-ty",//used for comments//if commented, doesnt load
-    lastBuildDate: (()=>{
-        var now = new Date();
-        return now.toISOString().split('T')[0]
-    })(),
-    lastBuildYear: (()=>{
-        var now = new Date();
-        return now.getFullYear();
-    })(),
+    lastBuildDate: now.toLocaleString('en-CA',{hour12:false}).replace(',',''),
+    lastBuildYear: now.getFullYear()
 }
