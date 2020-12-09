@@ -159,6 +159,9 @@ footer {
 /*****************************
  *   15. markdown tables
  ***************************** */
+table {
+  width: 100%;
+}
 
 table > * {
   padding: 10px;
