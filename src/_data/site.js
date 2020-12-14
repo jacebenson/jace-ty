@@ -6,7 +6,11 @@ module.exports = {
     linkedin: "https://linkedin.com/in/jace-ty",
     baseURL: "https://jace-ty.netlify.app",
     title: "Jace-ty",
-    //patreon: "https://www.patreon.com/bePatron?u=23597006",//if uncommented adds a link to header and footer
+    patreon: {
+        footerMessage: "Become a Patron and you'll get access to my posts in progress, polls, thoughts and other things I want to share.  A monthly happy hour with me and access to my PDI.",
+        url: "https://www.patreon.com/bePatron?u=23597006",
+        active: true
+    },
     description: "An 11ty Starter for your site featuring RSS, Search, and Comments",
     subtitle: "This is a subtitle about your amazing 11ty site.",
     author: "Your Name",//used all over

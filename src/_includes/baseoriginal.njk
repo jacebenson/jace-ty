@@ -52,39 +52,29 @@
       <!--<link rel="stylesheet" href="/assets/css/prism-a11y-dark.css" lazyload>-->
 </head>
 
+
+
+
 <body>
-
-
-<div class="parent">
-    <div class="header-left">
-    {{site.title}}
+<article>
+<div class="grid">
+    <header>
+        {% include "header.njk" %}
+    </header>
+    <main>
+    {% block content %}
+        {{ content | safe  }}
+    {% endblock content %}
+    {% block postContent %}{% endblock postContent %}
+    </main>
     
-    </div>
+    <footer>
+        {% include "footer.njk" %}
+    </footer>
+</div>
 
 
-    <div class="header-right">
-        <div class="hr-inner-grid">
-            <div class="hr-left">
-            <ul class="nav-links">
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="https://purple.com">Link</a></li>
-            </ul>
-            </div>
-            <div class="hr-right">
-            <form id="search">
-            <input class="search" type="text"></input>
-            </form>
-            </div>
-        </div>
-    </div>
-    <div class="content">CONTENT</div>
-    <div class="footer-left">FOOTER LEFT</div>
-    <div class="footer-right">FOOTER RIGHT</div>
-</div> 
-
-
+</div>
 <!--Required JS files-->
 <!-- enables search -->
 <script src="/postsJS.js"></script>
