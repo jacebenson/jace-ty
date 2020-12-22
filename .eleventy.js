@@ -27,8 +27,7 @@ module.exports = function (eleventyConfig) {
      });
      eleventyConfig.addFilter("formatDate", function(value) { 
         var d = new Date(value).toLocaleString("en-CA");
-        d = d.replace(',','');
-        d = d.replace(/\./g,'');
+        d.toLocaleString('en-CA',{hour12:false, timeZone: 'America/Chicago'}).replace(',','');
         return d;
     });
 
