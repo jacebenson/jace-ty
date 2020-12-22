@@ -15,6 +15,6 @@ module.exports = {
     author: "Your Name",//used all over
     email: "youremailforrss@example.com",//used specificly for rss feed
     utterancesRepo: "jacebenson/jace-ty",//used for comments//if commented, doesnt load
-    lastBuildDate: now.toLocaleString('en-CA',{hour12:false}).replace(',',''),
+    lastBuildDate: now.toLocaleString('en-CA',{hour12:false, timeZone: 'America/Chicago'}).replace(',',''),
     lastBuildYear: now.getFullYear(),
 }
