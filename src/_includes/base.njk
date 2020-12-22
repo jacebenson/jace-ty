@@ -14,7 +14,12 @@
     <link rel="alternate" href="/index.xml" type="application/rss+xml" title="{{site.title}}">
     <link rel="icon" type="image/png" href="/assets/img/icon-32.png">
     <link rel="apple-touch-icon" type="image/png" href="/assets/img/apple-touch-icon.png">
+    <!-- {{site.environment}} -->
+    {% if site.environment == "development" %}
+    <link rel="canonical" href="http://localhost{{page.url}}">
+    {% else %}
     <link rel="canonical" href="{{site.baseURL}}{{page.url}}">
+    {% endif %}
     <!--<link rel="manifest" href="/index.webmanifest">-->
 
  {%- block seo -%}

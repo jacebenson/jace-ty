@@ -7,7 +7,11 @@
     "build": "npx @11ty/eleventy",
     "serve": "npx @11ty/eleventy --serve",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "lighthouse-ci http://localhost:8081 --report=./_site/lh/ --view",
+    "g": "npx ./generators/generic.js",
+    "generate": "npx ./generators/generic.js",
+    "buildImages": "npx ./generators/buildImages.js",
+    "downloadImage": "npx ./generators/downloadImage.js"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +19,9 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1"
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "dotenv": "^8.2.0",
+    "lighthouse-ci": "^1.11.0"
   },
   "dependencies": {
     "@11ty/eleventy-img": "^0.3.0"

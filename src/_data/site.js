@@ -1,6 +1,9 @@
+const dotenv = require('dotenv').config()
 let now = new Date();
 
 module.exports = {
+    
+    environment: process.env.ELEVENTY_ENV,
     twitter: "jace-ty",
     github: "https://github.com/jace-ty",
     linkedin: "https://linkedin.com/in/jace-ty",
@@ -13,5 +16,5 @@ module.exports = {
     email: "youremailforrss@example.com",//used specificly for rss feed
     utterancesRepo: "jacebenson/jace-ty",//used for comments//if commented, doesnt load
     lastBuildDate: now.toLocaleString('en-CA',{hour12:false}).replace(',',''),
-    lastBuildYear: now.getFullYear()
+    lastBuildYear: now.getFullYear(),
 }
