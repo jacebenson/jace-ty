@@ -1,5 +1,7 @@
 # Jace-ty
 
+[See this live here](https://jace-ty.netlify.app)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fc9177c3-21b0-4f2b-8ab4-2f46df6b77ae/deploy-status)](https://app.netlify.com/sites/jace-ty/deploys)
 
 Jace's opinionated template for 11ty.
@@ -38,10 +40,68 @@ They should all be self explanatory.  A call out I have is;
 
 Utteranc.es requires the repository to be public on github to work
 
-### Creating Posts
+## Creating Posts
 
-1. 11ty uses [collections](https://www.11ty.dev/docs/collections/), as such to make a post a draft, add a frontmatter line of `tags: "draft"`
-2. This layout renders smaller images on the `/posts` page and in the footer.  There isn't anything to automatically resize you're images in this repo.  So you must have two images per post folder, `featured.jpg` and `featured-thumbnail.jpg` (keep 150px wide).  
+This template uses generators to make the files and images for posts.  You can change how this works by modifying the code in ./generators.
+
+One of the calls will generate the index.md, all the different image sizes needed for the templates.
+
+```bash
+yarn g post "This is the title of my post"
+```
+
+## Generators
+
+I've added a few helpful scripts to help build things.
+
+### Generic 
+
+The main generator is `./generators/generic.js`
+
+This will create or replace the index.md, and featured-*.webp files.
+
+This searches pixabay for the title, if it doesn't find a result, it 
+defaults to some random colors and objects until it finds something.
+
+You call it by running this;
+
+```bash
+yarn g collection title #
+#  1-^ 2-^        3-^
+# 1 - g or generate
+# 2 - so post or services or talk
+# 3 - title the title of the post.  
+# This renames the title to yyyy-mm-dd-title + title
+# also replaces non-alphanumerics with `-`s
+```
+
+### DownloadImages
+
+If you have a post and you want a different image but dont want to have resize them
+
+```bash
+yarn downloadImage ./src/post/my-first-post/ "search query"
+#                   1-^                       2-^
+# 1 - this is the folder that we'll be targeting to replace the images in
+# 2 - search query to pass to pixabay, you dont need quotes if one word
+#     if more than one word, you'll need to quote it.
+```
+
+### BuildImages
+
+If you already have an image but you dont want to convert it this script is for you.
+
+```bash
+yarn buildImages ./src/post/my-first-post/featured.jpg
+#                    1-^
+# 1 - this is the image we'll be resizing and converting
+#     this takes the image, creates a webp for the following
+#     sizes, 100, 200, 320, 360, 640, 720, 960, 1280
+#     These are specically used in the following templates
+#     ./src/_includes/footer.njk
+#     ./src/_includes/layouts/post.njk
+#     This is also used in ./src/post/post.json
+```
 
 
 ## Prerequisites

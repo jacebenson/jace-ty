@@ -1,3 +1,4 @@
+const dotenv = require('dotenv').config()
 let now = new Date();
 
 module.exports = {
@@ -36,6 +37,6 @@ module.exports = {
     author: "Your Name",//used all over
     email: "youremailforrss@example.com",//used specificly for rss feed
     utterancesRepo: "jacebenson/jace-ty",//used for comments//if commented, doesnt load
-    lastBuildDate: now.toLocaleString('en-CA',{hour12:false}).replace(',',''),
-    lastBuildYear: now.getFullYear()
+    lastBuildDate: now.toLocaleString('en-CA',{hour12:false, timeZone: 'America/Chicago'}).replace(',',''),
+    lastBuildYear: now.getFullYear(),
 }

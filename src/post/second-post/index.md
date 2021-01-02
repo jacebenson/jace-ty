@@ -75,12 +75,12 @@ _You **can** combine them_
 
 ```markdown
 ![Thumbnail](./featured-thumbnail.jpg)
-Format: ![Alt Text](url)
+Format: ![Alt Text](./featured-thumbnail.jpg)
 
 ```
 
 ![GitHub Logo](./featured-thumbnail.jpg)
-Format: ![Alt Text](url)
+Format: ![Alt Text](./featured-thumbnail.jpg)
 
 # Links
 
