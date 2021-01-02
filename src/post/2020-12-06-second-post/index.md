@@ -1,7 +1,7 @@
 ---
 title: "This is the second post"
 subtitle: "It's after the first"
-summary: "Soo many posts!"
+summary: "Soo many posts! here is more text we'll see what happens in the footer"
 linkText: "Continue reading second post"
 date: 2020-12-05T22:00:00-05:00
 ---

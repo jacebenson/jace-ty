@@ -1,8 +1,8 @@
 <footer>
     <div class="main-footer">
-    {% for post in collections.post.slice(collections.post.length-2,collections.post.length) | reverse %}
+    {% for post in collections.post.slice(collections.post.length-4,collections.post.length) | reverse %}
         <article class="article">
-            <img width="100px" class="article-thumb-footer" data-sizes="auto" sizes="100px"
+            <!--<img width="100px" class="article-thumb-footer" data-sizes="auto" sizes="100px"
                 src="{{post.url}}{{post.data.imageThumbnail}}"
                 srcset="
                 {{post.url}}featured-100.webp 100w,
@@ -14,10 +14,10 @@
                 {{post.url}}featured-960.webp 960w,
                 {{post.url}}featured-1280.webp 1280w"
                 alt="{{post.url}}{{post.data.imageThumbnail}}"
-            />
+            />-->
             <div class="content">
               <h2 class="title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-              <p class="text">{{post.data.summary}} {{post.data.date.toISOString().split('T')[0]}}</p>
+              <p class="text">{{post.data.subtitle}} {{post.data.date.toISOString().split('T')[0]}}</p>
               <div class="actions">
                 <a class="button secondary" href="{{ post.url }}">{{ post.data.linkText }}</a>
               </div>
