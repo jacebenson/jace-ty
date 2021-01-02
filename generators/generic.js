@@ -36,6 +36,7 @@ let createIndex = (folderName) => {
 title: "${args[3]}"
 subtitle: "A subtitle about ${args[3]}"
 summary: "Summary of ${args[3]}"
+linkText: "Continue reading ${args[3]}"
 date: ${new Date().toISOString()}
 ---
 

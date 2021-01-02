@@ -1,5 +1,6 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const CleanCSS = require("clean-css");
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginRss);  
     eleventyConfig.addPassthroughCopy("assets");
@@ -12,7 +13,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/**/*.mmd");
     eleventyConfig.addPassthroughCopy("./src/**/*.xml");
     eleventyConfig.addPassthroughCopy("./src/**/*.xslx");
-
+    eleventyConfig.addFilter("cssmin", function(code) {
+        return new CleanCSS({}).minify(code).styles;
+    });
     // add support for syntax highlighting
     eleventyConfig.addPlugin(syntaxHighlight);
 

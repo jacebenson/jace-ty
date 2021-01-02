@@ -1,9 +1,11 @@
 ---
 title: "This is the second post"
 subtitle: "It's after the first"
-summary: "Soo many posts!"
+summary: "Soo many posts! here is more text we'll see what happens in the footer"
+linkText: "Continue reading second post"
 date: 2020-12-05T22:00:00-05:00
 ---
+
 # Text
 ```markdown
 It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link to Google!](http://google.com)
