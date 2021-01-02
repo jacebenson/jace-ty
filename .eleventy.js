@@ -5,6 +5,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("./src/**/*.jpg");
     eleventyConfig.addPassthroughCopy("./src/**/*.png");
+    eleventyConfig.addPassthroughCopy("./src/**/*.webp");
     eleventyConfig.addPassthroughCopy("./src/**/*.gif");
     eleventyConfig.addPassthroughCopy("./src/**/*.mp4");
     eleventyConfig.addPassthroughCopy("./src/**/*.pdf");
@@ -24,7 +25,11 @@ module.exports = function (eleventyConfig) {
         }
         return `<${detailstag}><summary style="${summarystyle}"><span>${title}</span></summary>${content}</details>`;
      });
-
+     eleventyConfig.addFilter("formatDate", function(value) { 
+        var d = new Date(value).toLocaleString("en-CA");
+        d.toLocaleString('en-CA',{hour12:false, timeZone: 'America/Chicago'}).replace(',','');
+        return d;
+    });
 
     return {
         addPassthroughCopy: true,

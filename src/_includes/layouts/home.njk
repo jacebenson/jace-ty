@@ -41,15 +41,16 @@
 {%- endblock -%}
 
 {% block content %}
-<div class="cell text-white center" style="background-color: #222538;">
-{% if backgroundImage !="" %}
-    <h1 class="text-white">{{ title }}</h1>
-    <p class="text-white">{{ description }}</p>
-{% endif %}
-{% if content !="" %}
-<grid-line>
-            {{ content | safe }}
-</grid-line> 
-{% endif %}
+<div>
+  {% if imageName !="" %}
+  <div class="text-center">
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+    <img src={{imageName}} width="620px" alt="Screenshot"/>
+  </div>
+  {% endif %}
+  {% if content !="" %}
+    {{ content | safe }}
+  {% endif %}
 </div>
 {% endblock content %}

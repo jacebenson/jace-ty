@@ -2,14 +2,9 @@
 title: "This is my first post"
 subtitle: "Really, it's first"
 summary: "A summary of the post before the second"
+linkText: "Continue reading my first post"
 date: 2020-11-28T22:00:00-05:00
 tags: "draft"
----
----
-title: "This is the third post"
-subtitle: "It's after the second"
-summary: "Soo many posts! again!"
-date: 2020-12-08T22:00:00-05:00
 ---
 
 # Text
