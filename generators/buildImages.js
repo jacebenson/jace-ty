@@ -14,10 +14,7 @@ export let buildImages = (givenFile, callback) => {
   let postDir = path.dirname(givenFile)
   let originalImage = path.join(postDir, 'original.webp')
   let sizes = [
-    //1x   2x   3x
-    //180, 360, 540, 720, 900, 1080, 1260, 1440
-    320, 640, 960//, 1280
-    //120, 240, 360, 480, , 640, 720, 960, 1280
+    100, 200, 320, 360, 640, 720, 960, 1280
   ]
   sharp(imagePath)
   .toFile(originalImage, (err, info) => {
