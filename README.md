@@ -56,7 +56,7 @@ I use the PrismJS theeme `prism-a11y-dark.css` with [`@11ty/eleventy-plugin-synt
 
 ### Simple Search
 
-This feature allows for title, subtitle, summary, and meta field searches on your posts.  It's accomplished by making a javascript object and searching that from `postJS.njk`
+This feature allows for title, subtitle, summary, and meta field searches on your posts.  It's accomplished by making a javascript object and searching that from its definition in `base.njk`
 
 ### RSS
 I've added a Atom 1.0 valid feed from `feed.njk`.
