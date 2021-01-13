@@ -84,7 +84,19 @@
 
 <!--Required JS files-->
 <!-- enables search -->
-<script src="/postsJS.js"></script>
+<script>
+const posts = [
+{%- for post in collections.post %}
+    {
+      "title": "{{ post.data.title }}",
+      "url":"{{ post.url }}",
+      "date": "{{ post.date | rssDate }}",
+      "content": "{{ post.data.subtitle }} - {{ post.data.summary }}",
+      "meta": "{{ post.data.meta }}"
+    }{% if not loop.last %},{% endif %}
+{%- endfor %}
+];
+</script>
 <script src="/assets/js/search.js"></script>
 
 </body>
