@@ -34,10 +34,6 @@ module.exports = {
             text: "Posts",
         },
         {
-            link: "/talk",
-            text: "Talks",
-        },
-        {
             link: "/resources",
             text: "Resources",
         },
