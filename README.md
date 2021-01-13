@@ -76,7 +76,7 @@ src/
         └── index.md
 ```
 ### Comments powered by https://utteranc.es/
-If you've set up utteranc.es on your repo, its just a matter of setting that in the `_data/site.js` file.  It's added to posts in the `post-single.njk` file.
+If you've set up utteranc.es on your repo, set that in the `_data/site.js` file.  It's added to posts in the `post-single.njk` file.
 
 ### Theme files take a backseat to local files meaning
 This is great but still needs some work.
@@ -85,7 +85,7 @@ When you use this starter you'll notice most the template files are in `src/them
 
 How does this work?  Well, in `site.js` you define a theme near the top, that builds the proper path for the starter njk files.  If you want a new theme, you can create a sibling folder to `jace-ty`.  In site.js I've added a function to look at what file exists based on a simple path.  If /layouts/file.njk exists, return that, otherwise, return the theme file.
 
-The only problem I have with this is the top level collection *.md file.  Look at `./src/post/post.md`.  There it's hardcoded to jace-ty theme, you can easily change that but I've not figured out how to do that part simply. 
+The problem I have with this is the top level collection *.md file.  Look at `./src/post/post.md`.  There it's hardcoded to jace-ty theme, you can change that but I've not figured out how to do that part. 
 
 ## Creating Posts
 

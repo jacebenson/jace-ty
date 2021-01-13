@@ -12,8 +12,8 @@ module.exports = {
         //assume they mean locally the _includes folder
         let layoutsFolder = "./src/_includes/"
         let themeFolder = "./src/_includes/theme/" + theme + "/"
-        let localFilePath = path.win32.normalize(path.resolve(path.join(layoutsFolder, pathLoc)))
-        let themeFilePath = path.win32.normalize(path.resolve(path.join(themeFolder, pathLoc)))
+        let localFilePath = path.resolve(path.join(layoutsFolder, pathLoc))
+        let themeFilePath = path.resolve(path.join(themeFolder, pathLoc))
         if(fs.existsSync(localFilePath)){
             return localFilePath.toString();
         } else if (fs.existsSync(themeFilePath)) {
