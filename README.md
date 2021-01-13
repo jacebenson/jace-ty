@@ -52,7 +52,7 @@ yarn g post "This is the title of my post"
 
 ## Generators
 
-I've added a few helpful scripts to help build things.
+I've added generator scripts to help build files.
 
 ### Generic 
 

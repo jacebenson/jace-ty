@@ -5,13 +5,14 @@
 }
 ---
 <?xml version="1.0" encoding="utf-8"?>
+
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ site.title }}</title>
   <subtitle>{{ site.subtitle }}</subtitle>
-  <link href="{{ site.baseURL }}/index.xml }}" rel="self"/>
+  <link href="{{ site.baseURL }}/index.xml" rel="self"/>
   <link href="{{ site.baseURL }}"/>
   <updated>{{ collections.post | rssLastUpdatedDate }}</updated>
-  <id>{{ site.baseURL }}</id>
+  <id>{{ site.baseURL }}/</id>
   <author>
     <name>{{ site.author }}</name>
     <email>{{ site.email }}</email>

@@ -1,5 +1,5 @@
 ---
-layout: "layouts/home.njk"
+layout: "theme/jace-ty/layouts/simple.njk"
 title: "Resources"
 description: ""
 ---
