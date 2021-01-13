@@ -14,8 +14,12 @@ This project scaffold includes:
 - [RSS](https://github.com/jacebenson/jace-ty/blob/main/.eleventy.js#L4)
 - A folder structure for each post with proper passthrough for files
 - [Comments](https://github.com/jacebenson/jace-ty/blob/main/src/_includes/layouts/post-single.njk#L56) powered by [https://utteranc.es/](https://utteranc.es/)
+- Theme files take a backseat to local files meaning
+  - `./src/_includes/layouts/header.njk` will be used if exists, 
+    otherwise, use 
+    `./src/_includes/theme/${theme}/layouts/header.njk`
 
-![Eleventy screenshot](./src/screenshot.jpg)
+![Eleventy screenshot](./src/_includes/theme/jace-ty/screenshot.jpg)
 
 
 ## Instructions
@@ -39,6 +43,49 @@ This file controls some features of the site
 They should all be self explanatory.  A call out I have is;
 
 Utteranc.es requires the repository to be public on github to work
+
+
+
+## Features
+
+Each feature is important, so I want to detail them here.
+
+### Syntax Highlightling
+
+I use the PrismJS theeme `prism-a11y-dark.css` with [`@11ty/eleventy-plugin-syntaxhighlight`](https://www.11ty.dev/docs/plugins/syntaxhighlight/) for this feature.  You can change that template by updating `base.njk` with a link to your file.
+
+### Simple Search
+
+This feature allows for title, subtitle, summary, and meta field searches on your posts.  It's accomplished by making a javascript object and searching that from `postJS.njk`
+
+### RSS
+I've added a Atom 1.0 valid feed from `feed.njk`.
+
+### A folder structure for each post with proper passthrough for files
+What does this mean?  Each post gets a folder.  You don't have to do this but this is how I've built this theme.  It means you can keep your assets relative to your content.  
+The folder structure is like this
+```
+src/
+├── ...
+└── post/
+    ├── my-first-post
+    |   ├── featured-100.webp
+    |   └── index.md
+    └── my-second-post
+        ├── featured-100.webp
+        └── index.md
+```
+### Comments powered by https://utteranc.es/
+If you've set up utteranc.es on your repo, its just a matter of setting that in the `_data/site.js` file.  It's added to posts in the `post-single.njk` file.
+
+### Theme files take a backseat to local files meaning
+This is great but still needs some work.
+
+When you use this starter you'll notice most the template files are in `src/theme/jace-ty/`.  This is on purpose.  If you make a file in `src/layouts/` with the same name as a file in `src/theme/jace-ty/`, you're layouts file is used.  If you want to revert to this theme, rename or delete your file.
+
+How does this work?  Well, in `site.js` you define a theme near the top, that builds the proper path for the starter njk files.  If you want a new theme, you can create a sibling folder to `jace-ty`.  In site.js I've added a function to look at what file exists based on a simple path.  If /layouts/file.njk exists, return that, otherwise, return the theme file.
+
+The only problem I have with this is the top level collection *.md file.  Look at `./src/post/post.md`.  There it's hardcoded to jace-ty theme, you can easily change that but I've not figured out how to do that part simply. 
 
 ## Creating Posts
 
