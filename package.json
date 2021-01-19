@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "serve": "npx @11ty/eleventy --serve",
-    "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-    "test": "lighthouse-ci http://localhost:8081 --report=./_site/lh/ --view",
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=* eleventy",
     "g": "npx ./generators/generic.js",
     "generate": "npx ./generators/generic.js",
     "buildImages": "npx ./generators/buildImages.js",
@@ -18,8 +19,10 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
-    "@11ty/eleventy-plugin-rss": "^1.0.7",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
+    "markdown-it": "^8.4.2",
+    "markdown-it-anchor": "^5.2.5",
     "clean-css": "^4.2.3",
     "dotenv": "^8.2.0",
     "lighthouse-ci": "^1.11.0"

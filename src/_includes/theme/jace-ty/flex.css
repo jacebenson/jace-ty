@@ -915,3 +915,7 @@ background-color: #f2f2f2;
 table tr:hover {
 background-color: #ddd;
 }
+
+ul, ol {
+  margin-left: 2em;
+}

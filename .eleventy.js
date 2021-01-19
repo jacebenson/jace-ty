@@ -1,5 +1,7 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
 const CleanCSS = require("clean-css");
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginRss);  
@@ -18,6 +20,16 @@ module.exports = function (eleventyConfig) {
     });
     // add support for syntax highlighting
     eleventyConfig.addPlugin(syntaxHighlight);
+    let markdownLibrary = markdownIt({
+        html: true,
+        breaks: true,
+        linkify: true
+      }).use(markdownItAnchor, {
+        permalink: true,
+        permalinkClass: "direct-link",
+        permalinkSymbol: "#"
+      });
+      eleventyConfig.setLibrary("md", markdownLibrary);
 
     eleventyConfig.addPairedShortcode('details', function (content, title) {
         let detailstag = 'details';
