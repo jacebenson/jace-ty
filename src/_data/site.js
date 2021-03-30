@@ -2,7 +2,8 @@ const dotenv = require('dotenv').config()
 let now = new Date();
 const fs = require("fs"); // Or `import fs from "fs";` with ESM
 const path = require("path");
-let theme = "jace-ty"
+//let theme = "jace-ty"
+let theme = "jace-simple"
 module.exports = {
     getFile: function(pathLoc){
         //This gets the path of the file asked.  If you ask for header.njk

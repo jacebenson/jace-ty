@@ -9,11 +9,18 @@ Jace's opinionated template for 11ty.
 This project scaffold includes:
 
 - [Eleventy](https://11ty.dev)
-- [Syntax highlighting](https://github.com/jacebenson/jace-ty/blob/main/.eleventy.js#L21)
-- [Simple Site Search](https://github.com/jacebenson/jace-ty/blob/main/src/_includes/base.njk) <sup>see searchPosts function</sup>
-- [RSS](https://github.com/jacebenson/jace-ty/blob/main/.eleventy.js#L4)
 - A folder structure for each post with proper passthrough for files
-- [Comments](https://github.com/jacebenson/jace-ty/blob/main/src/_includes/layouts/post-single.njk#L56) powered by [https://utteranc.es/](https://utteranc.es/)
+- A way to organize code to switch themes easily.
+- RSS
+- [Syntax highlighting](https://github.com/jacebenson/jace-ty/blob/main/.eleventy.js#L21)
+- Two themes
+  - Jace-ty
+    - [Simple Site Search](https://github.com/jacebenson/jace-ty/blob/main/src/_includes/base.njk) <sup>see searchPosts function</sup>
+    - [Comments](https://github.com/jacebenson/jace-ty/blob/main/src/_includes/layouts/post-single.njk#L56) powered by [https://utteranc.es/](https://utteranc.es/)
+  - Jace-simple
+    - 100% semantic - at least that's the thought.  Inspired by https://www.erikkroes.nl/blog/i-made-this-website-with-html/
+    - [Comments](https://github.com/jacebenson/jace-ty/blob/main/src/_includes/layouts/post-single.njk#L56) powered by [https://utteranc.es/](https://utteranc.es/)
+    
 - Theme files take a backseat to local files meaning
   - `./src/_includes/layouts/header.njk` will be used if exists, 
     otherwise, use 

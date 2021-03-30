@@ -1,5 +1,5 @@
 ---
-layout: "theme/jace-ty/layouts/post.njk"
+layout: "theme/jace-simple/layouts/post.njk"
 title: "Posts!"
 description: "All my posts"
 backgroundImage: "/assets/img/post-title.jpg"
