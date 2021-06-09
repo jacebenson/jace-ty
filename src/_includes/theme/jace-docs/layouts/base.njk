@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="generator" content="11ty">
+    <meta name="author" content="{{site.author}}">
+    <meta name="description" content="{{site.title}}">
+    <link rel="alternate" hreflang="en-us" href="{{site.baseURL}}">
+    <meta name="theme-color" content="hsl(339, 90%, 68%)">
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="{{site.title}}">
+    <link rel="icon" type="image/png" href="/assets/img/icon-32.png">
+    <link rel="apple-touch-icon" type="image/png" href="/assets/img/apple-touch-icon.png">
+    {% if site.environment == "development" %}
+    <link rel="canonical" href="localhost/{{page.url}}">
+    <style>{{ css | cssmin | safe }}</style>
+    {% else %}
+    <link rel="canonical" href="{{site.baseURL}}{{page.url}}">
+    <style>{{ css | safe }}</style>
+    {% endif %}
+    <!--<link rel="manifest" href="/index.webmanifest">-->
+
+ {%- block seo -%}
+    <!--Twitter Card-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@{{site.twitter}}">
+    <meta name="twitter:creator" content="@{{site.twitter}}">
+    <meta name="twitter:url" content="{{site.baseURL}}{{page.url}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{ site.description }}">
+    
+    <!--Schema-->
+    <link rel="author" href="{{site.baseURL}}">
+    <link rel="publisher" href="{{site.baseURL}}">
+    <meta itemprop="name" content="{{title}}">
+    <meta itemprop="description" content="{{ site.description }}">
+    
+    <!-- Facebook OpenGraph -->
+    <meta property="fb:app_id" content="{{site.FB_APP_ID}}">
+    <meta property="og:url" content="{{site.baseURL}}{{page.url}}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:site_name" content="{{site.title}}">
+    <meta property="og:locale" content="en_GB">
+    <meta property="article:author" content="{{site.baseURL}}">
+    {%- endblock -%}
+    
+
+    <title>{{ title }}</title>
+
+        <!-- Required CSS files -->
+      <!--<link rel="stylesheet" href="/assets/css/flex.css" lazyload>-->
+      <!--<link rel="stylesheet" href="/assets/css/prism-a11y-dark.css" lazyload>-->
+
+<!-- capture the CSS content as a Nunjucks variable -->
+{% set css %}
+      {% include site.getFile("flex.css") ignore missing %}
+      {% include site.getFile("prism-a11y-dark.css") ignore missing %}
+{% endset %}
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  {{ css | cssmin | safe }}
+</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body> 
+  {% include site.getFile("layouts/header.njk") ignore missing %}
+  <aside>
+  {% include site.getFile("layouts/aside.njk") ignore missing %}
+  </aside>
+  
+  <main>
+    <article>
+    {% block content %}
+        {{ content | safe  }}
+    {% endblock content %}
+    {% block postContent %}{% endblock postContent %}
+
+    </article>
+    
+  </main>
+  {% include site.getFile("layouts/footer.njk") ignore missing %}
+</div>
+<script>
+var toggle = document.getElementById("theme-toggle");
+
+var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+if (storedTheme)
+    document.documentElement.setAttribute('data-theme', storedTheme)
+
+
+toggle.onclick = function() {
+    var currentTheme = document.documentElement.getAttribute("data-theme");
+    var targetTheme = "light";
+
+    if (currentTheme === "light") {
+        targetTheme = "dark";
+    }
+
+    document.documentElement.setAttribute('data-theme', targetTheme)
+    localStorage.setItem('theme', targetTheme);
+};
+</script>
+</body>
+
+</html>

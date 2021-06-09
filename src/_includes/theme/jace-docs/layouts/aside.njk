@@ -1,0 +1,15 @@
+<aside>
+    <nav>
+    {% for tag in collections.tagsList %}
+
+    <details open>
+    <summary>{{tag | capitalize}}</summary>
+    <ul>
+      {% for thing in collections[tag] %}
+      <li><a class="{% if page.url === thing.url %}active{% endif %}" href="{{ thing.url }}">{{ thing.data.title }}</a></li>
+      {% endfor %}
+    </ul>
+    </details>
+    {% endfor %}
+    </nav>
+</aside>

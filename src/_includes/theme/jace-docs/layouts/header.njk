@@ -1,0 +1,17 @@
+<header>
+    
+    
+    <nav>
+      <ul>
+      
+    <li><a href="/">Home</a></li>
+        {% for menuItem in site.menu %}
+        <li><a href="{{menuItem.link}}">{{menuItem.text}}</a></li>
+        {% endfor %}
+        {% if site.patreon.active %}
+        <li><a href="{{site.patreon.link}}">{{site.patreon.text}}</a></li>
+        {% endif %}
+        <li id="theme-toggle"><span class="light-toggle">🌞</span><span class="dark-toggle">🌘</span></li>
+      </ul>
+    </nav>
+</header>

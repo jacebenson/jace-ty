@@ -18,6 +18,16 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("cssmin", function(code) {
         return new CleanCSS({}).minify(code).styles;
     });
+    eleventyConfig.addCollection('tagsList', (collectionApi) => {
+        const tagsSet = new Set()
+        collectionApi.getAll().forEach((item) => {
+          if (!item.data.tags) return
+          item.data.tags
+            .filter((tag) => !['draft'].includes(tag))
+            .forEach((tag) => tagsSet.add(tag))
+        })
+        return [...tagsSet].sort((a, b) => b.localeCompare(a))
+      })
     // add support for syntax highlighting
     eleventyConfig.addPlugin(syntaxHighlight);
     let markdownLibrary = markdownIt({
