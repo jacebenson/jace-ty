@@ -1,12 +1,12 @@
 
-module.exports = {
+{
     "Tools": [
         {
             "text": "Hemingwayapp",
-            "link": "https://hemingwayapp.com",
+            "link": "https://hemingwayapp.com"
         }, {
             "text": "Squoosh.app",
-            "link": "https://squoosh.app",
+            "link": "https://squoosh.app"
         }
     ],
     "Hosts": [
@@ -57,4 +57,4 @@ module.exports = {
             "link": "https://dev.to/ajcwebdev"
         }        
     ]
-};
+}

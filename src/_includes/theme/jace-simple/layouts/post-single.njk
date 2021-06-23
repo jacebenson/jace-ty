@@ -1,4 +1,4 @@
-{% extends site.getFile("layouts/base.njk") %}
+{% extends util.getFile("layouts/base.njk") %}
 
 {%- block seo -%}
 <!--Twitter Card-->
@@ -44,5 +44,5 @@
 <section>        
   {{ content | safe }}
 </section>
-{% include site.getFile("utterances.njk") ignore missing %}
+{% include util.getFile("utterances.njk") ignore missing %}
 {% endblock content %}

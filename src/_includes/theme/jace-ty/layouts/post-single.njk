@@ -1,4 +1,4 @@
-{% extends site.getFile("layouts/base.njk") %}
+{% extends util.getFile("layouts/base.njk") %}
 {%- block seo -%}
 <!--Twitter Card-->
 <meta name="twitter:card" content="summary">
@@ -71,8 +71,9 @@
     <div class="row justify-content-md-center">
         <div class="col-md-10">
             {{ content | safe }}
+            
         </div>
     </div>
 </div> 
-{% include site.getFile("utterances.njk") ignore missing %}
+{% include util.getFile("utterances.njk") ignore missing %}
 {% endblock content %}
