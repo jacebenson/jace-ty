@@ -15,6 +15,8 @@ collections:
   - label: "Blog"
     name: "blog"
     folder: "src/post"
+    path: "{{slug}}/index"
+    media_folder: "{{dirname}}"
     create: true
     editor:
       preview: false
@@ -35,34 +37,77 @@ collections:
     editor:
       preview: false
     files:
-      - label: "Navigation"
+      - label: "Site"
+        name: settings
+        file: "src/_data/site.json"
+        fields:
+          - label: Theme
+            name: theme
+            widget: string
+          - label: Twitter
+            name: twitter
+            widget: string
+          - label: Github
+            name: github
+            widget: string
+          - label: Linkedin
+            name: linkedin
+            widget: string
+          - label: BaseURL
+            name: baseURL
+            widget: string
+          - label: Title
+            name: title
+            widget: string
+          - label: Description
+            name: description
+            widget: string
+          - label: Subtitle
+            name: subtitle
+            widget: string
+          - label: Author
+            name: author
+            widget: string
+          - label: Email
+            name: email
+            widget: string
+          - label: utterancesRepo
+            name: utterancesRepo
+            widget: boolean
+          - label: Menu
+            name: menu
+            widget: list
+            allow_add: true
+            collapsed: false
+            fields:
+              - { label: Name, name: text, widget: string }
+              - { label: URL, name: link, widget: string }
+          
+      - label: "Resources"
         name: "items"
-        file: "src/_data/navigation.yaml"
+        file: "src/_data/resources.json"
         fields:
-          - label: Nav Items
-            name: items
+          - label: Tools
+            name: Tools
             widget: list
-            allow_add: false
+            allow_add: true
             collapsed: false
             fields:
-              - { label: Title, name: text, widget: string }
-              - { label: URL, name: url, widget: string }
-      - label: "Quick Links"
-        name: "links"
-        file: "src/_data/quicklinks.yaml"
-        fields:
-          - label: Nav Items
-            name: links
+              - { label: Name, name: text, widget: string }
+              - { label: URL, name: link, widget: string }
+          - label: Hosts
+            name: Hosts
             widget: list
+            allow_add: true
             collapsed: false
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: URL, name: url, widget: string }
-              - { label: Description, name: desc, widget: string }
-      - label: "Meta Settings"
-        name: "settings"
-        file: "src/_data/settings.yaml"
-        fields:
-          - { label: Name, name: name, widget: string }
-          - { label: Author, name: author, widget: string }
-          - { label: URL, name: url, widget: string }
+              - { label: Name, name: text, widget: string }
+              - { label: URL, name: link, widget: string }
+          - label: Blogs
+            name: Blogs
+            widget: list
+            allow_add: true
+            collapsed: false
+            fields:
+              - { label: Name, name: text, widget: string }
+              - { label: URL, name: link, widget: string }
