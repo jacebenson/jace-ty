@@ -7,7 +7,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginRss);  
     eleventyConfig.addPassthroughCopy({
       "./src/admin/config.yml": "./admin/config.yml",
-      "./src/admin/config.yml": "./config.yml",
       "./src/admin/index.html": "./admin/index.html",
     }),
     eleventyConfig.addPassthroughCopy("assets");
