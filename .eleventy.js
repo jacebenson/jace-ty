@@ -11,6 +11,7 @@ module.exports = function (eleventyConfig) {
     }),
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("./src/**/*.jpg");
+    eleventyConfig.addPassthroughCopy("./src/**/*.yml");
     eleventyConfig.addPassthroughCopy("./src/**/*.png");
     eleventyConfig.addPassthroughCopy("./src/**/*.webp");
     eleventyConfig.addPassthroughCopy("./src/**/*.gif");
