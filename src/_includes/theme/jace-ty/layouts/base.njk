@@ -53,8 +53,8 @@
     <title>{{ title }}</title>
     <!-- capture the CSS content as a Nunjucks variable -->
     {% set css %}
-      {% include site.getFile("flex.css") ignore missing %}
-      {% include site.getFile("prism-a11y-dark.css") ignore missing %}
+      {% include util.getFile("flex.css") ignore missing %}
+      {% include util.getFile("prism-a11y-dark.css") ignore missing %}
     {% endset %}
     <!-- feed it through our cssmin filter to minify -->
     <style>
@@ -66,7 +66,7 @@
 <body>
 
 <div class="page-wrap">
-  {% include site.getFile("layouts/header.njk") ignore missing %}
+  {% include util.getFile("layouts/header.njk") ignore missing %}
   
   <main class="main-content">
     <section class="article-wrap">
@@ -79,7 +79,7 @@
 
     </section>
   </main>
-  {% include site.getFile("layouts/footer.njk") ignore missing %}
+  {% include util.getFile("layouts/footer.njk") ignore missing %}
 </div>
 
 <!--Required JS files-->

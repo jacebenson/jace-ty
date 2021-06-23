@@ -1,6 +1,7 @@
 ---
 title: "Resources"
 description: ""
+layout: "/theme/jace-simple/layouts/home.njk"
 eleventyComputed:
   layout: "/theme/{{ site.theme }}/layouts/simple.njk"
   title: "Jace-ty using {{ site.theme }} theme"

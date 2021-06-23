@@ -1,4 +1,4 @@
-let site = require("../_data/site.js");
+let site = require("../_data/site.json");
 module.exports = function() {
     var returnObj = {
         "layout": `/theme/${site.theme}/layouts/post-single.njk`,

@@ -58,8 +58,8 @@
 
 <!-- capture the CSS content as a Nunjucks variable -->
 {% set css %}
-      {% include site.getFile("flex.css") ignore missing %}
-      {% include site.getFile("prism-a11y-dark.css") ignore missing %}
+      {% include util.getFile("flex.css") ignore missing %}
+      {% include util.getFile("prism-a11y-dark.css") ignore missing %}
 {% endset %}
 <!-- feed it through our cssmin filter to minify -->
 <style>
@@ -69,9 +69,9 @@
 </head>
 
 <body> 
-  {% include site.getFile("layouts/header.njk") ignore missing %}
+  {% include util.getFile("layouts/header.njk") ignore missing %}
   <aside>
-  {% include site.getFile("layouts/aside.njk") ignore missing %}
+  {% include util.getFile("layouts/aside.njk") ignore missing %}
   </aside>
   
   <main>
@@ -84,7 +84,7 @@
     </article>
     
   </main>
-  {% include site.getFile("layouts/footer.njk") ignore missing %}
+  {% include util.getFile("layouts/footer.njk") ignore missing %}
 </div>
 <script>
 var toggle = document.getElementById("theme-toggle");

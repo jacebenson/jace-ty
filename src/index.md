@@ -94,7 +94,7 @@ If you've set up utteranc.es on your repo, set that in the `_data/site.js` file.
 
 ### Theme files take a backseat to local files meaning
 
-In the template files instead of a strait `includes layouts/simple.njk` I use a function called  `site.getFile("layouts/simple.njk")`.  This looks for the file outside of the theme, then inside the theme.
+In the template files instead of a strait `includes layouts/simple.njk` I use a function called  `util.getFile("layouts/simple.njk")`.  This looks for the file outside of the theme, then inside the theme.
 
 Let's walk through the example file given above.  If we had the `site.theme` set to jace-simple, here's where it would look.
 1.  `./src/_includes/layouts/simple.njk`
