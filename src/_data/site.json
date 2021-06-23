@@ -1,33 +1,34 @@
 {
-    "theme": "jace-ty",
-    "twitter": "jace-ty",
-    "github": "https://github.com/jace-ty",
-    "linkedin": "https://linkedin.com/in/jace-ty",
-    "baseURL": "https://jace-ty.netlify.app",
-    "title": "Jace-ty",
-    "patreon": {
-        "footerMessage": "Become a Patron and you'll get access to my posts in progress, polls, thoughts and other things I want to share.  A monthly happy hour with me and access to my PDI.",
-        "link": "https://www.patreon.com/bePatron?u=23597006",
-        "text": "Become a Patron!",
-        "active": false
+  "github": "https://github.com/jace-ty",
+  "theme": "jace-simple",
+  "author": "Your Name",
+  "twitter": "jace-ty",
+  "utterancesRepo": false,
+  "patreon": {
+    "footerMessage": "Become a Patron and you'll get access to my posts in progress, polls, thoughts and other things I want to share.  A monthly happy hour with me and access to my PDI.",
+    "link": "https://www.patreon.com/bePatron?u=23597006",
+    "text": "Become a Patron!",
+    "active": false
+  },
+  "subtitle": "This is a subtitle about your amazing 11ty site.",
+  "title": "Jace-ty",
+  "email": "youremailforrss@example.com",
+  "description": "An 11ty Starter for your site featuring RSS, Search, and Comments",
+  "baseURL": "https://jace-ty.netlify.app",
+  "linkedin": "https://linkedin.com/in/jace-ty",
+  "menu": [
+    {
+      "link:": "https://github.com/jacebenson/jace-ty/",
+      "text": "GitHub",
+      "link": "https://github.com/jacebenson/jace-ty/"
     },
-    "description": "An 11ty Starter for your site featuring RSS, Search, and Comments",
-    "subtitle": "This is a subtitle about your amazing 11ty site.",
-    "author": "Your Name",
-    "email": "youremailforrss@example.com",
-    "utterancesRepo": false,
-    "menu": [
-        {
-            "link:": "https://github.com/jacebenson/jace-ty/",
-            "text": "GitHub"
-        },
-        {
-            "link": "/post",
-            "text": "Posts"
-        },
-        {
-            "link": "/resources",
-            "text": "Resources"
-        }
-    ]
+    {
+      "link": "/post",
+      "text": "Posts"
+    },
+    {
+      "link": "/resources",
+      "text": "Resources"
+    }
+  ]
 }
