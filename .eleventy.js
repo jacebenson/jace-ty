@@ -5,6 +5,10 @@ const markdownItAnchor = require("markdown-it-anchor");
 const CleanCSS = require("clean-css");
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginRss);  
+    eleventyConfig.addPassthroughCopy({
+      "./src/admin/config.yml": "./admin/config.yml",
+      "./src/admin/index.html": "./admin/index.html",
+    }),
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("./src/**/*.jpg");
     eleventyConfig.addPassthroughCopy("./src/**/*.png");
