@@ -10,75 +10,117 @@ public_folder: "/static/img"
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
-# publish_mode: editorial_workflow
+publish_mode: editorial_workflow
 collections:
-  - label: "Blog"
-    name: "blog"
+  - label: "File"
+    name:  file,
+    create: true
+    files:
+      - label: "README.MD"
+        name: readme
+        file: "README.md"
+        fields:
+          - { label: "Body", name: "body", widget: "markdown" }
+  - label: "Page"
+    name: "page"
+    create: true
+    editor:
+      preview: true
+    files: 
+      - label: "Home"
+        name: "index"
+        file: "src/index.md"
+        fields:
+          - {label: Description, name: description, widget: string}
+          - {label: ImageName  , name: imageName  , widget: string}
+          - label: eleventyComputed
+            name: eleventyComputed
+            widget: object
+            collapsed: true
+            fields:
+              - {label: Layout, name: layout, widget: string}
+              - {label: Title , name: title , widget: string}
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Resources"
+        name: "resources"
+        file: "src/resources.md"
+        fields:
+          - {label: Description,     name: description,     widget: string}
+          - {label: backgroundImage, name: backgroundImage, widget: string}
+          - label: eleventyComputed
+            name: eleventyComputed
+            widget: object
+            collapsed: true
+            fields:
+              - {label: Layout, name: layout, widget: string}
+              - {label: Title , name: title , widget: string}
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Post"
+        name: "post"
+        file: "src/post.md"
+        fields:
+          - {label: Description,     name: description,     widget: string}
+          - {label: backgroundImage, name: backgroundImage, widget: string}
+          - label: eleventyComputed
+            name: eleventyComputed
+            widget: object
+            collapsed: true
+            fields:
+              - {label: Layout, name: layout, widget: string}
+              - {label: Title , name: title , widget: string}
+          - { label: "Body", name: "body", widget: "markdown" }    
+  - label: "Post"
+    name: "post"
     folder: "src/post"
     path: "{{slug}}/index"
     media_folder: "{{dirname}}"
     create: true
     editor:
-      preview: false
+      preview: true
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Title",        name: "title",       widget: "string" }
+      - { label: "Description",  name: "description", widget: "string" }
+      - { label: "Author",       name: "author",      widget: "string" }
+      - { label: "Publish Date", name: "date",        widget: "datetime" }
+      - { label: "Body",         name: "body",        widget: "markdown" }
       - widget: select
         label: "tags"
         name: "tags"
-        multiple: true
+        multiple: false
         create: true
-        options: ["Tags", "created", "from", "config.yml"]
+        options: ["draft", "post", "story"]
   - label: "Settings"
     name: "settings"
     editor:
       preview: false
     files:
+      - label: "Socials"
+        name: socials
+        file: "src/_data/socials.json"
+        fields:
+          - {label: Twitter, name: twitter, widget: string}
+          - {label: Github, name: github, widget: string}
+          - {label: Linkedin, name: linkedin, widget: string}        
       - label: "Site"
         name: settings
         file: "src/_data/site.json"
         fields:
           - label: Theme
             name: theme
-            widget: string
-          - label: Twitter
-            name: twitter
-            widget: string
-          - label: Github
-            name: github
-            widget: string
-          - label: Linkedin
-            name: linkedin
-            widget: string
-          - label: BaseURL
-            name: baseURL
-            widget: string
-          - label: Title
-            name: title
-            widget: string
-          - label: Description
-            name: description
-            widget: string
-          - label: Subtitle
-            name: subtitle
-            widget: string
-          - label: Author
-            name: author
-            widget: string
-          - label: Email
-            name: email
-            widget: string
-          - label: utterancesRepo
-            name: utterancesRepo
-            widget: boolean
-          - label: Menu
+            widget: select
+            options: ["jace-ty", "jace-simple", "jace-docs"]
+          - {label: BaseURL, name: baseURL, widget: string}
+          - {label: Title, name: title, widget: string}
+          - {label: Description, name: description, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string}
+          - {label: Author, name: author, widget: string}
+          - {label: Email, name: email, widget: string}
+          - {label: utterancesRepo, name: utterancesRepo, widget: boolean}
+          - label: Menu Item
             name: menu
             widget: list
             allow_add: true
-            collapsed: false
+            collapsed: true
             fields:
               - { label: Name, name: text, widget: string }
               - { label: URL, name: link, widget: string }
@@ -91,7 +133,7 @@ collections:
             name: Tools
             widget: list
             allow_add: true
-            collapsed: false
+            collapsed: true
             fields:
               - { label: Name, name: text, widget: string }
               - { label: URL, name: link, widget: string }
@@ -99,7 +141,7 @@ collections:
             name: Hosts
             widget: list
             allow_add: true
-            collapsed: false
+            collapsed: true
             fields:
               - { label: Name, name: text, widget: string }
               - { label: URL, name: link, widget: string }
@@ -107,7 +149,7 @@ collections:
             name: Blogs
             widget: list
             allow_add: true
-            collapsed: false
+            collapsed: true
             fields:
               - { label: Name, name: text, widget: string }
               - { label: URL, name: link, widget: string }
